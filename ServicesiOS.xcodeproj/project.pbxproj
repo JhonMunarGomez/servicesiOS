@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F10D21FD27583FA100157908 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10D21FC27583FA100157908 /* User.swift */; };
+		F10D22012758401B00157908 /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10D22002758401B00157908 /* Address.swift */; };
+		F10D22032758405A00157908 /* Company.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10D22022758405A00157908 /* Company.swift */; };
+		F10D2205275841A500157908 /* CollectionUserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10D2204275841A500157908 /* CollectionUserViewModel.swift */; };
+		F10D22072758434700157908 /* UserCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10D22062758434700157908 /* UserCollectionView.swift */; };
+		F10D220A2758450000157908 /* DataStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10D22092758450000157908 /* DataStorage.swift */; };
+		F10D220C2758489900157908 /* ServicesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10D220B2758489900157908 /* ServicesManager.swift */; };
+		F10D220F27584A0300157908 /* DataStorageLocalEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10D220E27584A0300157908 /* DataStorageLocalEnum.swift */; };
+		F10D221127584C9800157908 /* CollectionUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10D221027584C9800157908 /* CollectionUser.swift */; };
 		F141472827583A1100245608 /* ServicesiOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F141472727583A1100245608 /* ServicesiOSApp.swift */; };
 		F141472A27583A1100245608 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F141472927583A1100245608 /* ContentView.swift */; };
 		F141472C27583A1400245608 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F141472B27583A1400245608 /* Assets.xcassets */; };
@@ -34,6 +43,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F10D21FC27583FA100157908 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		F10D22002758401B00157908 /* Address.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
+		F10D22022758405A00157908 /* Company.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Company.swift; sourceTree = "<group>"; };
+		F10D2204275841A500157908 /* CollectionUserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionUserViewModel.swift; sourceTree = "<group>"; };
+		F10D22062758434700157908 /* UserCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCollectionView.swift; sourceTree = "<group>"; };
+		F10D22092758450000157908 /* DataStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStorage.swift; sourceTree = "<group>"; };
+		F10D220B2758489900157908 /* ServicesManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicesManager.swift; sourceTree = "<group>"; };
+		F10D220E27584A0300157908 /* DataStorageLocalEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStorageLocalEnum.swift; sourceTree = "<group>"; };
+		F10D221027584C9800157908 /* CollectionUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionUser.swift; sourceTree = "<group>"; };
 		F141472427583A1100245608 /* ServicesiOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ServicesiOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F141472727583A1100245608 /* ServicesiOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicesiOSApp.swift; sourceTree = "<group>"; };
 		F141472927583A1100245608 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -71,6 +89,94 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F10D21F427583E3E00157908 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F10D21F527583E4700157908 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F141472927583A1100245608 /* ContentView.swift */,
+				F141472727583A1100245608 /* ServicesiOSApp.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F10D21F627583E4D00157908 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		F10D21F727583EBF00157908 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				F10D21F427583E3E00157908 /* Model */,
+				F10D21F527583E4700157908 /* View */,
+				F10D21F627583E4D00157908 /* ViewModel */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		F10D21F827583EDF00157908 /* User */ = {
+			isa = PBXGroup;
+			children = (
+				F10D21FB27583F8800157908 /* ViewModel */,
+				F10D21FA27583F8000157908 /* View */,
+				F10D21F927583F7800157908 /* Model */,
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
+		F10D21F927583F7800157908 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F10D21FC27583FA100157908 /* User.swift */,
+				F10D22002758401B00157908 /* Address.swift */,
+				F10D22022758405A00157908 /* Company.swift */,
+				F10D221027584C9800157908 /* CollectionUser.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F10D21FA27583F8000157908 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F10D22062758434700157908 /* UserCollectionView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F10D21FB27583F8800157908 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				F10D2204275841A500157908 /* CollectionUserViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		F10D2208275844E500157908 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				F10D220D275849DB00157908 /* enum */,
+				F10D22092758450000157908 /* DataStorage.swift */,
+				F10D220B2758489900157908 /* ServicesManager.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		F10D220D275849DB00157908 /* enum */ = {
+			isa = PBXGroup;
+			children = (
+				F10D220E27584A0300157908 /* DataStorageLocalEnum.swift */,
+			);
+			path = enum;
+			sourceTree = "<group>";
+		};
 		F141471B27583A1100245608 = {
 			isa = PBXGroup;
 			children = (
@@ -94,8 +200,9 @@
 		F141472627583A1100245608 /* ServicesiOS */ = {
 			isa = PBXGroup;
 			children = (
-				F141472727583A1100245608 /* ServicesiOSApp.swift */,
-				F141472927583A1100245608 /* ContentView.swift */,
+				F10D2208275844E500157908 /* Common */,
+				F10D21F827583EDF00157908 /* User */,
+				F10D21F727583EBF00157908 /* App */,
 				F141472B27583A1400245608 /* Assets.xcassets */,
 				F141472D27583A1400245608 /* Preview Content */,
 			);
@@ -257,8 +364,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F10D220C2758489900157908 /* ServicesManager.swift in Sources */,
 				F141472A27583A1100245608 /* ContentView.swift in Sources */,
 				F141472827583A1100245608 /* ServicesiOSApp.swift in Sources */,
+				F10D22012758401B00157908 /* Address.swift in Sources */,
+				F10D220A2758450000157908 /* DataStorage.swift in Sources */,
+				F10D22032758405A00157908 /* Company.swift in Sources */,
+				F10D21FD27583FA100157908 /* User.swift in Sources */,
+				F10D2205275841A500157908 /* CollectionUserViewModel.swift in Sources */,
+				F10D220F27584A0300157908 /* DataStorageLocalEnum.swift in Sources */,
+				F10D221127584C9800157908 /* CollectionUser.swift in Sources */,
+				F10D22072758434700157908 /* UserCollectionView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
