@@ -55,7 +55,15 @@ class ServicesManager{
         }
     }
     
-    func getPosts(id: Int){
+    func getPosts(id: Int,completion: @escaping (_ response: [Post]?) -> Void){
+        methodAdd = "/posts?userId=\(id)"
+        callService(Model: [Post].self) { result in
+            guard let results = result else{
+                completion(nil)
+                return
+            }
+            completion(results)
+        }
         
     }
     

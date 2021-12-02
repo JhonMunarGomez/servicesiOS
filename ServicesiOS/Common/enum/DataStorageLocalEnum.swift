@@ -8,6 +8,6 @@
 import Foundation
 
 
-enum DataStoraLocalEnum: String {
+enum DataStorageLocalEnum: String {
     case collectionUser = "collectionUser"
 }

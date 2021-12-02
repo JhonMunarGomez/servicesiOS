@@ -9,36 +9,32 @@ import Foundation
 
 
 protocol DataStorageDelegate{
-    func saveData(data:[User],enumData: DataStoraLocalEnum)
+    func saveData(data:[User],enumData: DataStorageLocalEnum)
 }
 
 class DataStorageLocal: DataStorageDelegate {
     
     let userDefault: UserDefaults
+    lazy var jsonUtilities = JSONUtilities()
     
     init(){
         userDefault = UserDefaults.init()
     }
-    func saveData(data:[User],enumData: DataStoraLocalEnum){
-        guard let data = try? JSONEncoder().encode(data),
-              let jsonString = String(data: data, encoding: .utf8) else { return }
+    func saveData(data:[User],enumData: DataStorageLocalEnum){
+        guard let jsonString = jsonUtilities.getJSON(Model: [User].self, data: data) else{
+            return
+        }
         userDefault.set(jsonString, forKey: enumData.rawValue)
     }
     
-    
-    func getData(enumData: DataStoraLocalEnum) -> [User]?{
+    func deleteElement(enumData: DataStorageLocalEnum){
+        userDefault.removeObject(forKey: enumData.rawValue)
+    }
+    func getData(enumData: DataStorageLocalEnum) -> [User]?{
         guard let jsonString = userDefault.string(forKey: enumData.rawValue) else{
             return nil
         }
-        do{
-            let data = Data(jsonString.utf8)
-            let response =  try JSONDecoder().decode([User].self, from: data)
-            
-            return response
-        }catch{
-            return nil
-        }
-  
+        return jsonUtilities.getObject(Model: [User].self, jsonString: jsonString) ?? nil
     }
     
 }

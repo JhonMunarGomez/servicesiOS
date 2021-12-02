@@ -9,12 +9,7 @@ import Foundation
 
 class CollectionViewModel: ObservableObject{
     let DataStorage : DataStorageLocal
-    /*public private(set) var collections: [User] {
-        willSet{
-            self.objectWillChange.send()
-        }
-    }*/
-    
+    @Published var isLoading: Bool = false
     @Published var collections:[User]
     
     init(){
@@ -22,50 +17,27 @@ class CollectionViewModel: ObservableObject{
         self.DataStorage = DataStorageLocal()
         self.fetchCollection()
     }
-        //https://jsonplaceholder.typicode.com/
     func fetchCollection() -> Void {
         
         guard let dataCollection = self.DataStorage.getData(enumData: .collectionUser) else{
-           
+            DispatchQueue.main.async {
+                self.isLoading = true
+            }
             let services: ServicesManager = ServicesManager()
             services.getUsers { response in
                 guard let dataUsers = response else{
                     return
                 }
                 DispatchQueue.main.async {
+                    self.isLoading = false
                     self.collections.append(contentsOf: dataUsers)
                     self.DataStorage.saveData(data: self.collections, enumData: .collectionUser)
                 }
                 
             }
-           /* guard let url = URL(string:"https://jsonplaceholder.typicode.com/users") else{
-                return
-            }
-            var request = URLRequest(url:url)
-            request.httpMethod = "GET"
-            URLSession.shared.dataTask(with: request) { data, response, errorApi in
-                if errorApi != nil {
-                    return
-                }else{
-                    do{
-                      if let jsonData = data {
-                            let decodeData = try JSONDecoder().decode([User].self, from: jsonData)
-                            
-                            DispatchQueue.main.async {
-                                self.collections.append(contentsOf: decodeData)
-                                self.DataStorage.saveData(data: self.collections, enumData: .collectionUser)
-                            }
-                        }
-                    }catch let error{
-                        print(error)
-                    }
-                }*/
-           // }.resume()
             return
         }
-      
         self.collections = dataCollection
-        
     }
     
     func filterCollection(filter:String) {
